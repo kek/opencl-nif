@@ -7,7 +7,7 @@ project ("ErlangOpenCL")
 
 include_directories(
   SYSTEM
-  "include/erlang"
+  "vendor/erlang/include"
 )
 
 # Add source to this project's executable.
