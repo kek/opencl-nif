@@ -1,0 +1,2 @@
+- Requires Windows
+- Requires OCL_SDK_Light https://github.com/GPUOpen-LibrariesAndSDKs/OCL-SDK/releases
