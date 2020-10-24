@@ -6,6 +6,17 @@ defmodule Mix.Tasks.Compile.Nif do
 
     case System.cmd("script/build_nif.bat", [], stderr_to_stdout: true) do
       {_result, 0} ->
+        priv_path = List.to_string(:code.priv_dir(:opencl))
+        source = "_build/nif/Debug/opencl_nif.dll"
+        destination = "#{priv_path}/opencl_nif.dll"
+
+        try do
+          File.copy!(source, destination)
+        rescue
+          File.CopyError ->
+            IO.puts("The destination #{destination} is busy :(")
+        end
+
         :ok
 
       {result, error_code} ->
