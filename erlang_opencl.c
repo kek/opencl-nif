@@ -4,15 +4,6 @@
 #include <CL/cl.h>
 #include <stdio.h>
 
-int foo(int x)
-{
-    printf("hello, world!\n");
-
-    return x + 1;
-}
-
-int bar(int x) { return x - 1; }
-
 int num_platforms(int _x)
 {
     cl_int err;
