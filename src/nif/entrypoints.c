@@ -1,6 +1,4 @@
 ﻿
-#include "entrypoints.h"
-
 #include <CL/cl.h>
 #include <stdio.h>
 
@@ -19,3 +17,6 @@ int num_platforms(int _x)
 
     return numPlatforms;
 }
+
+int scratch() 
+{ return 0; }

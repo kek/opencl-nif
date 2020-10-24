@@ -13,4 +13,6 @@ defmodule :opencl do
 
   @spec num_platforms(any) :: any
   def num_platforms(_x), do: exit(:nif_library_not_loaded)
+
+  def scratch(), do: exit(:nif_library_not_loaded)
 end

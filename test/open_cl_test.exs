@@ -5,4 +5,8 @@ defmodule OpenCLTest do
   test "can run something on the OpenCL API" do
     assert :opencl.get_number_of_platforms() == 1
   end
+
+  test "scratch function returns whatever" do
+    assert :opencl.scratch()
+  end
 end
