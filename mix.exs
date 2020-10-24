@@ -1,5 +1,7 @@
 defmodule Mix.Tasks.Compile.Nif do
   def run(_args) do
+    {:win32, :nt} = :os.type()
+
     case System.cmd("script/build_nif.bat", [], stderr_to_stdout: true) do
       {_result, 0} ->
         File.mkdir_p!("priv/windows")
