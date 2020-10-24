@@ -1,4 +1,4 @@
--module(windows_test).
+-module(erlang_opencl).
 
 -export([bar/0, bar/1, foo/1]).
 

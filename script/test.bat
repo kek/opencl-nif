@@ -1,2 +1,2 @@
-erlc test\windows\windows_test.erl
+erlc -o test\windows test\windows\erlang_opencl.erl
 erl -pa test\windows -noshell -s erlang_opencl bar -s init stop
