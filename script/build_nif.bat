@@ -1,3 +1,3 @@
-cmake -S c_src -B build
+cmake -S . -B _build\nif
 call script\vsenv.bat
-msbuild build\ErlangOpenCL.sln
+msbuild _build\nif\ErlangOpenCL.sln

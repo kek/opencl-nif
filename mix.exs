@@ -3,7 +3,12 @@ defmodule Mix.Tasks.Compile.Nif do
     case System.cmd("script/build_nif.bat", [], stderr_to_stdout: true) do
       {_result, 0} ->
         File.mkdir_p!("priv/windows")
-        File.copy!("build/Debug/erlang_opencl_nif.dll", "priv/windows/erlang_opencl_nif.dll")
+
+        File.copy!(
+          "_build/nif/Debug/erlang_opencl_nif.dll",
+          "priv/windows/erlang_opencl_nif.dll"
+        )
+
         :ok
 
       {result, error_code} ->

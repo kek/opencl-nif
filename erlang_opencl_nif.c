@@ -1,8 +1,6 @@
 #include <erl_nif.h>
 #include <string.h>
 
-extern int foo(int x);
-extern int bar(int y);
 extern int num_platforms(int z);
 
 #include <stdio.h>

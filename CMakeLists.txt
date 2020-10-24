@@ -14,7 +14,6 @@ include_directories(
 link_directories(
 	SYSTEM
 	"$ENV{OCL_ROOT}/lib/x86_64"
-
 )
 
 # Add source to this project's executable.
