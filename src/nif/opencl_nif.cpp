@@ -1,5 +1,6 @@
 #include <erl_nif.h>
 #include <string.h>
+#include "compute.h"
 
 extern int num_platforms(int z);
 extern int scratch();

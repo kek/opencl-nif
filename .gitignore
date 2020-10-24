@@ -25,7 +25,4 @@ opencl-*.tar
 # Temporary files for e.g. tests
 /tmp
 
-/out
 *.beam
-/build
-/priv/windows

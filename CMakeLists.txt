@@ -9,6 +9,7 @@ include_directories(
 	SYSTEM
 	"$ENV{ERLANG_HOME}/usr/include"
 	"$ENV{OCL_ROOT}/include"
+	"src/nif"
 )
 
 link_directories(
@@ -19,10 +20,11 @@ link_directories(
 # Add source to this project's executable.
 add_library(
 	opencl_nif SHARED
-	"src/nif/entrypoints.cpp"
-	"src/nif/opencl_nif.cpp"
-	"src/nif/Misc.cpp"
 	"src/nif/Misc.h"
+	"src/nif/compute.cpp"
+	"src/nif/Misc.cpp"
+	"src/nif/opencl_nif.cpp"
+	"src/nif/entrypoints.cpp"
 )
 
 target_link_libraries(opencl_nif "OpenCL")
