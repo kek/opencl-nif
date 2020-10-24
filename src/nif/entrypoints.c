@@ -1,5 +1,5 @@
 ﻿
-#include "opencl.h"
+#include "entrypoints.h"
 
 #include <CL/cl.h>
 #include <stdio.h>
