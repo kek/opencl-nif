@@ -28,3 +28,4 @@ opencl-*.tar
 /out
 *.beam
 /build
+/priv/windows
