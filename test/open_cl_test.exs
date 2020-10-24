@@ -1,8 +1,8 @@
 defmodule OpenCLTest do
   use ExUnit.Case
-  doctest OpenCL
+  doctest :erlang_opencl
 
-  test "greets the world" do
-    assert OpenCL.hello() == :world
+  test "can run something on the OpenCL API" do
+    assert :erlang_opencl.get_number_of_platforms() == 1
   end
 end
