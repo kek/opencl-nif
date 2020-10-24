@@ -24,6 +24,6 @@ int scratch()
 {
     Misc *misc = new Misc();
     int one = misc->one();
-    compute();
+    for (int i = 0; i < 1000; i++) compute();
     return one;
 }
