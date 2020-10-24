@@ -1,6 +1,7 @@
-﻿
-#include <CL/cl.h>
+﻿#include <CL/cl.h>
 #include <stdio.h>
+#include "Misc.h"
+#include <iostream>
 
 int num_platforms(int _x)
 {
@@ -18,5 +19,10 @@ int num_platforms(int _x)
     return numPlatforms;
 }
 
-int scratch() 
-{ return 0; }
+int scratch() { 
+   Misc *misc = new Misc();
+    int one = misc->one();
+    
+    return one;
+
+}

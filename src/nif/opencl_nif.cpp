@@ -19,7 +19,7 @@ static ERL_NIF_TERM num_platforms_nif(ErlNifEnv *env, int argc, const ERL_NIF_TE
 static ERL_NIF_TERM sandbox_nif(ErlNifEnv *env, int argc, const ERL_NIF_TERM argv[])
 {
     int ret;
-    ret = 0;
+    ret = scratch();
     return enif_make_int(env, ret);
 }
 

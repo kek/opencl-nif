@@ -7,6 +7,6 @@ defmodule OpenCLTest do
   end
 
   test "scratch function returns whatever" do
-    assert :opencl.scratch()
+    assert :opencl.scratch() == 1
   end
 end
