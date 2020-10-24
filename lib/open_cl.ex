@@ -7,7 +7,7 @@ defmodule :opencl do
   @on_load :init
 
   @spec init :: :ok
-  def init, do: :ok = :erlang.load_nif('./priv/windows/opencl_nif', 0)
+  def init, do: :ok = :erlang.load_nif('./_build/nif/Debug/opencl_nif', 0)
 
   @spec num_platforms(any) :: any
   def num_platforms(_x), do: exit(:nif_library_not_loaded)

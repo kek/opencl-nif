@@ -2,15 +2,10 @@ defmodule Mix.Tasks.Compile.Nif do
   def run(_args) do
     {:win32, :nt} = :os.type()
 
+    IO.puts("Compiling NIF")
+
     case System.cmd("script/build_nif.bat", [], stderr_to_stdout: true) do
       {_result, 0} ->
-        File.mkdir_p!("priv/windows")
-
-        File.copy!(
-          "_build/nif/Debug/opencl_nif.dll",
-          "priv/windows/opencl_nif.dll"
-        )
-
         :ok
 
       {result, error_code} ->
@@ -28,6 +23,7 @@ defmodule OpenCL.MixProject do
     [
       app: :opencl,
       compilers: [:nif] ++ Mix.compilers(),
+      elixirc_paths: ["lib", "src"],
       version: "0.1.0",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,

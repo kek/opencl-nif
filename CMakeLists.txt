@@ -19,8 +19,8 @@ link_directories(
 # Add source to this project's executable.
 add_library(
 	opencl_nif SHARED
-	"opencl.c" "opencl.h"
-	"opencl_nif.c"
+	"src/nif/opencl.c" "src/nif/opencl.h"
+	"src/nif/opencl_nif.c"
 )
 
 target_link_libraries(opencl_nif "OpenCL")
