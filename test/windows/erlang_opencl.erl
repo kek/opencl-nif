@@ -1,12 +1,11 @@
--module(erlang_opencl).
+-module(opencl).
 
 -export([num_platforms/1, print_number_of_platforms/0]).
 
 -on_load({init, 0}).
 
 init() ->
-    ok = erlang:load_nif("./build/Debug/erlang_opencl_nif",
-                         0).
+    ok = erlang:load_nif("./build/Debug/opencl_nif", 0).
 
 num_platforms(_Z) -> exit(nif_library_not_loaded).
 

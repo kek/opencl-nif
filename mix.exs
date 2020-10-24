@@ -7,8 +7,8 @@ defmodule Mix.Tasks.Compile.Nif do
         File.mkdir_p!("priv/windows")
 
         File.copy!(
-          "_build/nif/Debug/erlang_opencl_nif.dll",
-          "priv/windows/erlang_opencl_nif.dll"
+          "_build/nif/Debug/opencl_nif.dll",
+          "priv/windows/opencl_nif.dll"
         )
 
         :ok

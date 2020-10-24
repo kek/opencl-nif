@@ -3,7 +3,7 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-project ("ErlangOpenCL")
+project ("OpenCL_NIF")
 
 include_directories(
 	SYSTEM
@@ -18,11 +18,11 @@ link_directories(
 
 # Add source to this project's executable.
 add_library(
-	erlang_opencl_nif SHARED
-	"erlang_opencl.c" "erlang_opencl.h"
-	"erlang_opencl_nif.c"
+	opencl_nif SHARED
+	"opencl.c" "opencl.h"
+	"opencl_nif.c"
 )
 
-target_link_libraries(erlang_opencl_nif "OpenCL")
+target_link_libraries(opencl_nif "OpenCL")
 
 # TODO: Add tests and install targets if needed.
