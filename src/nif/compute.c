@@ -13,7 +13,7 @@
 
 #include "source.h"
 
-int compute(Source source)
+int cl_compute(Source source)
 {
     // Create the two input vectors
     int i;

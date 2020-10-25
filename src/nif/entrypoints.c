@@ -26,10 +26,16 @@ int scratch()
 
     for (int i = 0; i < 1; i++) {
         printf("Compute iteration %d\n", i + 1);
-        compute(source);
+        cl_compute(source);
     }
 
     free(source.source_str);
 
     return 1;
+}
+
+int compute(char* source)
+{
+    printf("Source: %s", source);
+    return 0;
 }

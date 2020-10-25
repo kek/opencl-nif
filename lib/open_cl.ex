@@ -15,4 +15,6 @@ defmodule :opencl do
   def num_platforms(_x), do: exit(:nif_library_not_loaded)
 
   def scratch(), do: exit(:nif_library_not_loaded)
+
+  def compute(_source), do: exit(:nif_library_not_loaded)
 end

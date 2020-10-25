@@ -22,7 +22,7 @@ defmodule OpenCL.MixProject do
   defp deps do
     [
       {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
-      {:dialyxir, "~> 1.0", only: :dev}
+      {:dialyxir, "~> 1.0", only: :dev, runtime: false}
     ]
   end
 end
