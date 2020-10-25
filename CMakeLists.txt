@@ -20,6 +20,7 @@ link_directories(
 # Add source to this project's executable.
 add_library(
 	opencl_nif SHARED
+	"src/nif/source.c"
 	"src/nif/compute.c"
 	"src/nif/opencl_nif.c"
 	"src/nif/entrypoints.c"
