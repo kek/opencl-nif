@@ -10,7 +10,7 @@
 #endif
 
 #define MAX_SOURCE_SIZE (0x100000)
-#pragma warning(disable : 4996)
+// #pragma warning(disable : 4996)
 
 typedef struct Source {
     char* source_str;
@@ -19,7 +19,6 @@ typedef struct Source {
 
 Source read_source()
 {
-    // Load the kernel source code into the array source_str
     FILE* fp;
 
     Source source;
@@ -47,9 +46,8 @@ int compute(void)
         B[i] = LIST_SIZE - i;
     }
 
+    // Load the kernel source code into the array source_str
     Source source = read_source();
-    char* source_str = source.source_str;
-    size_t source_size = source.source_size;
 
     // Get platform and device information
     cl_platform_id platform_id = NULL;
@@ -81,8 +79,8 @@ int compute(void)
                                NULL, NULL);
 
     // Create a program from the kernel source
-    cl_program program = clCreateProgramWithSource(context, 1, (const char**)&source_str,
-                                                   (const size_t*)&source_size, &ret);
+    cl_program program = clCreateProgramWithSource(context, 1, (const char**)&source.source_str,
+                                                   (const size_t*)&source.source_size, &ret);
 
     // Build the program
     ret = clBuildProgram(program, 1, &device_id, NULL, NULL, NULL);
