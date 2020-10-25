@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 #include "compute.h"
+#include "source.h"
 
 int num_platforms(int _x)
 {
@@ -21,10 +22,14 @@ int num_platforms(int _x)
 
 int scratch()
 {
+    Source source = read_source();
+
     for (int i = 0; i < 1; i++) {
         printf("Compute iteration %d\n", i + 1);
-        compute();
+        compute(source);
     }
+
+    free(source.source_str);
 
     return 1;
 }

@@ -13,13 +13,7 @@
 
 #include "source.h"
 
-int compute(void)
-{
-    Source source = read_source();
-    return compute1(source);
-}
-
-int compute1(Source source)
+int compute(Source source)
 {
     // Create the two input vectors
     int i;
