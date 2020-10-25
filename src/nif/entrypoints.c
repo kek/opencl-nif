@@ -1,7 +1,6 @@
 ﻿#include <CL/cl.h>
 #include <stdio.h>
 
-#include "Misc.h"
 #include "compute.h"
 
 int num_platforms(int _x)
@@ -22,8 +21,10 @@ int num_platforms(int _x)
 
 int scratch()
 {
-    Misc *misc = new Misc();
-    int one = misc->one();
-    for (int i = 0; i < 1000; i++) compute();
-    return one;
+    for (int i = 0; i < 1; i++) {
+        printf("Compute iteration %d\n", i + 1);
+        compute();
+    }
+
+    return 1;
 }

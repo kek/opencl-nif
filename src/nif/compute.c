@@ -45,6 +45,7 @@ int compute(void)
     cl_uint ret_num_platforms;
     cl_int ret = clGetPlatformIDs(1, &platform_id, &ret_num_platforms);
     ret = clGetDeviceIDs(platform_id, CL_DEVICE_TYPE_GPU, 1, &device_id, &ret_num_devices);
+    printf("after clGetDeviceIDs, ret: %d, num devices: %d \n", ret, ret_num_devices);
 
     // Create an OpenCL context
     cl_context context = clCreateContext(NULL, 1, &device_id, NULL, NULL, &ret);
