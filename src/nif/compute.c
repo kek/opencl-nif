@@ -12,6 +12,29 @@
 #define MAX_SOURCE_SIZE (0x100000)
 #pragma warning(disable : 4996)
 
+typedef struct Source {
+    char* source_str;
+    size_t source_size;
+} Source;
+
+Source read_source()
+{
+    // Load the kernel source code into the array source_str
+    FILE* fp;
+
+    Source source;
+    fp = fopen("priv/vector_add_kernel.cl", "r");
+    if (!fp) {
+        fprintf(stderr, "Failed to load kernel.\n");
+        exit(1);
+    }
+    source.source_str = (char*)malloc(MAX_SOURCE_SIZE);
+    source.source_size = fread(source.source_str, 1, MAX_SOURCE_SIZE, fp);
+    fclose(fp);
+
+    return source;
+}
+
 int compute(void)
 {
     // Create the two input vectors
@@ -24,19 +47,9 @@ int compute(void)
         B[i] = LIST_SIZE - i;
     }
 
-    // Load the kernel source code into the array source_str
-    FILE* fp;
-    char* source_str;
-    size_t source_size;
-
-    fp = fopen("priv/vector_add_kernel.cl", "r");
-    if (!fp) {
-        fprintf(stderr, "Failed to load kernel.\n");
-        exit(1);
-    }
-    source_str = (char*)malloc(MAX_SOURCE_SIZE);
-    source_size = fread(source_str, 1, MAX_SOURCE_SIZE, fp);
-    fclose(fp);
+    Source source = read_source();
+    char* source_str = source.source_str;
+    size_t source_size = source.source_size;
 
     // Get platform and device information
     cl_platform_id platform_id = NULL;
