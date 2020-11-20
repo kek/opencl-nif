@@ -1,1 +1,1 @@
-int cl_compute(void);
+int cl_compute(Source);

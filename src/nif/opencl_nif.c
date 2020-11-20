@@ -37,12 +37,12 @@ static ERL_NIF_TERM compute_nif(ErlNifEnv *env, int argc, const ERL_NIF_TERM arg
 
     int ret = enif_get_string(env, argv[0], source_str, MAX_SOURCE_SIZE, ERL_NIF_LATIN1);
     printf("enif_get_string returned %d\n", ret);
-    if (!ret) {
+    if (ret == 0) {
         printf("no source");
         return enif_make_badarg(env);
     }
     ret = compute(source_str);
-    free(source_str);
+    // free(source_str);
     return enif_make_int(env, ret);
 }
 

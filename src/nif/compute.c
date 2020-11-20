@@ -81,7 +81,7 @@ int cl_compute(Source source)
                               NULL, NULL);
 
     // Display the result to the screen
-    // for (i = 0; i < LIST_SIZE; i++) printf("%d + %d = %d\n", A[i], B[i], C[i]);
+    for (i = 0; i < LIST_SIZE; i++) printf("%d + %d = %d\n", A[i], B[i], C[i]);
 
     // Clean up
     ret = clFlush(command_queue);
@@ -96,5 +96,6 @@ int cl_compute(Source source)
     free(A);
     free(B);
     free(C);
+    printf("compute done\n");
     return 0;
 }

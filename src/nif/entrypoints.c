@@ -1,5 +1,6 @@
 ﻿#include <CL/cl.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "compute.h"
 #include "source.h"
@@ -34,8 +35,13 @@ int scratch()
     return 1;
 }
 
-int compute(char* source)
+int compute(char* source_string)
 {
-    printf("Source: %s", source);
+    printf("Source: %s ...", source_string);
+
+    Source source;
+    source.source_str = source_string;
+    source.source_size = strlen(source_string);
+    cl_compute(source);
     return 0;
 }
